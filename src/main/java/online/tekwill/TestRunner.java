@@ -2,6 +2,7 @@ package online.tekwill;
 
 import online.tekwill.managers.DriverManager;
 import online.tekwill.managers.RandomDataManager;
+import online.tekwill.managers.ScrollManager;
 import org.openqa.selenium.*;
 
 public class TestRunner {
@@ -21,7 +22,7 @@ public class TestRunner {
         System.out.println("The diver is on page: "+ driver.getCurrentUrl());
 
 
-        WebElement myAccountDropDownIcon = driver.findElement(By.xpath("//i[@class='fa-solid fa-caret-down']"));
+        WebElement myAccountDropDownIcon = driver.findElement(By.xpath("//i[@class='fa-solid fa-user']"));
         myAccountDropDownIcon.click();
 
         WebElement registerLink = driver.findElement(By.xpath("//a[normalize-space()='Register']"));
@@ -47,9 +48,8 @@ public class TestRunner {
         System.out.println("Password: " + passwordData);
         passWordInput.sendKeys(passwordData);
 
-        WebElement privacyToggleButton = driver.findElement(By.name("agree"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true):", privacyToggleButton);
-        Thread.sleep(500);
+        WebElement privacyToggleBar = driver.findElement(By.name("agree"));
+        ScrollManager.scrollToElement(privacyToggleBar);
 
 
         //privacyToggleButton.click();
