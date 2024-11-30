@@ -38,7 +38,7 @@ public class TestRunner {
         lastNameInput.sendKeys(RandomDataManager.getRandomLastName());
 
         WebElement emailInput = driver.findElement(By.id("input-email"));
-        String emailData = RandomDataManager.getRandomEmail()
+        String emailData = RandomDataManager.getRandomEmail();
         System.out.println("Email: " + emailData);
         emailInput.sendKeys(emailData);
         //emailInput.sendKeys(RandomDataManager.getRandomEmail());
@@ -60,8 +60,6 @@ public class TestRunner {
         System.out.println("The diver is on page: "+ driver.getCurrentUrl());
 
 
-
-        Thread.sleep("3000");
 
         // Thread.sleep("5000");
         // Close the current tab

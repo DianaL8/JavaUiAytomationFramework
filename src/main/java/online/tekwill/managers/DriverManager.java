@@ -49,4 +49,12 @@ public class DriverManager {
     public WebDriver getDriver() {
         return driver;
     }
+
+    public void quitTheDriver(){
+        driver.quit();
+        driver = null;
+        instance = null;
+        System.out.println("The driver is closed after running and completed a test.");
+
+    }
 }
